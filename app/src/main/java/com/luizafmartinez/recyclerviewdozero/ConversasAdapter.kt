@@ -8,7 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
-class ConversasAdapter : Adapter<ConversasAdapter.ConversaViewHolder>() {
+class ConversasAdapter(
+    private val listaConversas : List<Conversa>
+) : Adapter<ConversasAdapter.ConversaViewHolder>() {
 
     //View Holder   . Esta é a classe que vai criar a conexão com o xml
     inner class ConversaViewHolder( itemView: View ) : ViewHolder(itemView) {
@@ -21,6 +23,7 @@ class ConversasAdapter : Adapter<ConversasAdapter.ConversaViewHolder>() {
     // Herança de View -> item
     // Executado para cada criação de View (Converter XML para objeto do tipo View)
     // onCreateViewHolder vai usar ConversaViewHolder e vai passar o objetoView - itemView
+    // Chamado poucas vezes: Se tenho 1000 itens, vai ser chamado (ex) 40 vezes
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConversaViewHolder {
 
@@ -44,10 +47,11 @@ class ConversasAdapter : Adapter<ConversasAdapter.ConversaViewHolder>() {
 
     // 1) Verifica a quantidade de itens a serem criados
     override fun getItemCount(): Int { //Recupera a quantidade de itens
-
-
+        return listaConversas.size
     }
 
+    // Conecta os dadsos com a View
+    // Vai ser chamadoa as "1000"
     override fun onBindViewHolder(holder: ConversaViewHolder, position: Int) {
 
 
