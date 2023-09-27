@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_conversas"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -20,5 +21,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
         tools:itemCount="20"
-        tools:listitem="@layout/recycler_view_item" />
+        tools:listitem="@layout/item_conversa" />
 </androidx.constraintlayout.widget.ConstraintLayout>
