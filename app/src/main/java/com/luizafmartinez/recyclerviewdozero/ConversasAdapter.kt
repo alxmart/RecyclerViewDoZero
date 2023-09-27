@@ -54,7 +54,8 @@ class ConversasAdapter(
     // Vai ser chamadoa as "1000"
     override fun onBindViewHolder(holder: ConversaViewHolder, position: Int) {
 
-
+        val conversa = listaConversas[position]
+        holder.textNome.text = conversa.nome
 
     }
 
